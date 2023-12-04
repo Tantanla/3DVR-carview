@@ -140,7 +140,7 @@ const init = async () => {
   setCamera()
   setLight()
   setControls()
-  const gltf = await loadFile('src/assets/3d/tesla_2018_model_3/scene.gltf')
+  const gltf = await loadFile('assets/3d/tesla_2018_model_3/scene.gltf')
   scene.add(gltf.scene)
   loop()
 }
