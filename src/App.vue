@@ -111,6 +111,7 @@ const setCarColor = (index) => {
   })
 }
 
+//加载进度条
 const loadFile = (url) => {
   return new Promise(((resolve, reject) => {
     loader.load(url,
@@ -160,8 +161,16 @@ onMounted(init)
     
     <div class="mask">
       <p>x : {{x}} y:{{y}} z :{{z}}</p>
-      <button @click="isAutoFun">转动车</button>
-      <button @click="stop">停止</button>
+      <button @click="isAutoFun">
+        <p>Autofun</p>
+        <p>转动车</p> 
+      </button>
+      <button @click="stop">
+        <p>Stop</p>
+        <p>停止转动</p>
+      </button>
+      <p>拖动鼠标可变换观察视角</p>
+      <p>点击下方颜色卡片可更换车身颜色</p>
       <div class="flex">
         <div @click="setCarColor(index)" v-for="(item,index) in colorAry"
              :style="{backgroundColor : item}"></div>
@@ -218,7 +227,7 @@ canvas {
   color: #fff;
   position: absolute;
   bottom: 0;
-  left: 20;
+  left: 60;
   width: 100%;
 }
 
